@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+:root {
+    --background: #282A2D;
+    --dark-background: #161616;
+    --light-background: #0000004d;
+    --sidebar-background: #1c1d1f;
+    --dia-background: #121213;
+    --text: white;
+    --yellow: #e5a00d;
+    --over-yellow: #f3b125;
+}

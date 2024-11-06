@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--background);
+    color: white;
+}
+
+/* Logo Styling */
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 50px;
+}
+
+
+
+/* Search Box Styling */
+.header .search-box {
+    flex: 1;
+    display: flex;
+    max-width: 24vw;
+    margin: 0 20px;
+}
+
+.header .search-box input {
+    /* position: absolute; */
+    padding: 12px 26px;
+    padding-left: 46px;
+    font-size: 1rem;
+    background-color: #ffffff0c;
+    border-radius: 50px;
+    border: none;
+    /* border-bottom: 2px solid var(--text); */
+    color: rgba(255, 255, 255, 0.676);
+    outline: none;
+    width: 24vw;
+}
+
+.header .search-box i {
+    position: absolute;
+    padding: 12px;
+    padding-left: 20px;
+    color: var(--light-background);
+}
+
+/* Button Styling */
+.header .action-btn .i {
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.action-btn i {
+    font-size: 1.6rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .header .search-box {
+        margin: 10px 0;
+        max-width: 100%;
+    }
+    .header .action-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
