@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Flickz</title>
 
     <!-- CSS -->
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./assets/css/src/index/main.css">
 
     <!-- JS -->
+    <script defer src="./assets/js/src/index/trending.js"></script>
+    <script defer src="./assets/js/src/index/search.js"></script>
 
 
 </head>
@@ -21,7 +23,7 @@
         <a href="./" class="logo"><img src="./assets/img/logo-nobg.png" alt="Flickz Logo"></a>
         
         <div class="search-box">
-            <input id="navbar-search" type="text" placeholder="Harry Potter, The Hobbit, ...">
+            <input id="navbar-search" type="text" placeholder="Harry Potter, Peaky Blinders, ...">
             <i class='bx bx-search' style='color:#ffffff' ></i>
         </div>
         
@@ -29,18 +31,8 @@
     </header>
     <main>
         <section class="results">
-            <div class="grid-container">
-                
-                <div class="grid-item">
-                    <a href="/movie">
-                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lZZKTEvo92u1J5pm7QoEA5yN3du.jpg">
-                        <div>
-                            <span>The Super Movie</span>
-                        </div>
-                    </a>
-                </div>
-                
-
+            <div id="results-container" class="grid-container">
+                <h4 class="loading-text">Loading...</h4>
             </div>
         </section>
     </main>

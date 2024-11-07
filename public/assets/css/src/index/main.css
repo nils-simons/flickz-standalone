@@ -1,9 +1,14 @@
 .results {
-    margin-top: 10vh;
+    padding: 30px;
+    margin-top: 0vh;
     display: flex;
     justify-content: center;
     align-items: center;
     /* min-height: 100vh; */
+}
+
+.loading-text {
+    color: rgba(255, 255, 255, 0.623);
 }
 
 .grid-container {
@@ -23,7 +28,7 @@
     /* padding-bottom: 20px; */
     cursor: pointer;
     transition: .1s;
-    border: none;
+    border: 0px solid var(--yellow);
 }
 
 .grid-item:hover {

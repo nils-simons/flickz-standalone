@@ -1,0 +1,39 @@
+main {
+    position: absolute;
+    top: 10vh;
+    text-align: center;
+    padding: 0px 20vw;
+    padding-top: 5vh;
+}
+
+main div {
+    max-width: 1200px;
+    /* width: 100%; */
+}
+
+.card {
+    display: block;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: fit-content(10vw) fit-content(45vw) 1fr;
+    grid-gap: 16px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 6px;
+    -webkit-user-drag: none;
+}
+
+.card .content {
+    color: white;
+}
+
+.card .content span {
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
