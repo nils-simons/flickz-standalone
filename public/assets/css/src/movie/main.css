@@ -13,7 +13,6 @@ main div {
 
 .card {
     display: block;
-    height: 20vh;
     display: grid;
     grid-template-columns: fit-content(10vw) fit-content(45vw) 1fr;
     grid-gap: 16px;
@@ -29,11 +28,104 @@ main div {
 }
 
 .card .content {
+    text-align: left;
     color: white;
 }
 
 .card .content span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.actions-container {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--dark-background);
+    border-radius: 6px;
+    padding: 4px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fields container styling */
+.options-container {
+    display: flex;
+    gap: 10px; /* space between fields */
+}
+
+/* Individual field styling */
+.options-container label {
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+label select, input {
+    padding: 8px 14px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: var(--dark-background);
+    outline: none;
+    cursor: pointer;
+}
+
+button {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--background);
+    background-color: var(--yellow);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes the space between table borders */
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+/* Table Header */
+table th {
+    background-color: #4CAF50; /* Header background color */
+    color: white;
+    padding: 12px; /* Space around header text */
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table Body */
+table td {
+    padding: 12px; /* Space around cell text */
+    border-bottom: 1px solid #ddd; /* Horizontal border between rows */
+}
+
+/* Alternating Row Colors */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Lighter shade for every other row */
+}
+
+/* Hover Effect on Rows */
+table tr:hover {
+    background-color: #e9f7df; /* Light green when hovering over a row */
+}
+
+/* Add Border for Table */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Optional: Center Text in Cells */
+table th, table td {
+    text-align: center;
 }

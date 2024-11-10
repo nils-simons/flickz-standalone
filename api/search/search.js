@@ -1,9 +1,9 @@
 const tmdb = require('../../app/tmdb');
 
 exports.get = (app) => {
-    app.get('/api/search', async (req, res) => {
+    app.get('/api/search/:query', async (req, res) => {
 
-        if (!req.query.query) {
+        if (!req.params.query) {
             res.status(400).json({
                 status: 400,
                 error: 'missing query'
@@ -11,7 +11,7 @@ exports.get = (app) => {
             return
         }
 
-        const results = await tmdb.searchQuery(req.query.query.replaceAll(' ', '+'))
+        const results = await tmdb.searchQuery(req.params.query.replaceAll(' ', '+'))
         res.status(200).json({
             status: 200,
             data: results

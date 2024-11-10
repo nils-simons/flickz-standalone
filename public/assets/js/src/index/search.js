@@ -26,7 +26,7 @@ const search = async (query) => {
     url.searchParams.set("q", url_query);
     window.history.pushState({}, "", url);
 
-    const resp = await fetch(`/api/search?query=${url_query}`);
+    const resp = await fetch(`/api/search/${url_query}`);
     const data = await resp.json();
     console.log(data);
 

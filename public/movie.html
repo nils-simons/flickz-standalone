@@ -14,11 +14,11 @@
 
 
     <!-- JS -->
+
+    <script defer src="./assets/js/src/movie/movie.js"></script>
+    <script defer src="./assets/js/src/movie/search.js"></script>
 </head>
 <body>
-    <div class="backdrop">
-        <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/8jujdLr4OAQoWGgfNmaE4RR0mqb.jpg" alt="">
-    </div>
     <header>
         <div onclick="history.back()" class="back">
             <i class='bx bx-left-arrow-alt'></i>
@@ -32,12 +32,67 @@
 
         <div class="card">
             <!-- Movie Poster Image -->
-            <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fDId2ZqBNSZBROQ1bxI0x6BXYvT.jpg" alt="John Wick: Chapter 4">
+            <img id="card-poster" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fDId2ZqBNSZBROQ1bxI0x6BXYvT.jpg" alt="John Wick: Chapter 4">
             <!-- Text Content -->
             <div class="content">
-                <span>John Wick: Chapter 4</span>
-                <p>2023 · 2h35</p>
+                <span id="card-title">John Wick: Chapter 4</span>
+                <p id="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ratione quae? Ducimus nesciunt reiciendis quis. Modi, molestias est optio ut exercitationem, pariatur dicta hic aperiam corrupti illo minus, magni porro!</p>
             </div>
+        </div>
+
+        <div class="actions-container">
+            <div class="options-container">
+                <label for="select-language">
+                    Languages
+                    <br>
+                    <select id="select-language">
+                        <option value="eng">Englisch</option>
+                        <option value="ger">German</option>
+                        <option value="fra">French</option>
+                    </select>
+                </label>
+
+                <label for="select-quality">
+                    Quality
+                    <br>
+                    <select id="select-quality">
+                        <option value="">None</option>
+                        <option value="">HD</option>
+                        <option value="">FHD</option>
+                        <option value="">2K</option>
+                        <option value="">4K</option>
+                    </select>
+                </label>
+
+                <label for="opt-params" class="opt-params-label">
+                    Additional Parameters
+                    <br>
+                    <input id="opt-params" type="text">
+                </label>
+            </div>
+
+            <button onclick="search()">Search</button>
+        </div>
+
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Seeds</th>
+                        <th>Peers</th>
+                        <th>Size</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Harry.Potter.Hogwarts.Tournament.Of.Houses.S01.COMPLETE.720p.HMA</td>
+                        <td>223</td>
+                        <td>126</td>
+                        <td>2.2 GB</td>
+                        <td><button>Download</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 </body>

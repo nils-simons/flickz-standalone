@@ -41,3 +41,17 @@ exports.getTrendings = () => {
         r(results)
     })
 }
+
+exports.getMovie = (id) => {
+    return new Promise(async (r) => {
+        var resp = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${process.env.TMDB_API_KEY}`
+            }
+        });
+        var resp = await resp.json();
+        r(resp)
+    })
+}
