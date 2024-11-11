@@ -34,6 +34,10 @@ const search = async (query) => {
     for (let i = 0; i < data.data.length; i++) {
         const item = data.data[i];
 
+        if (item.media_type !== 'movie' && item.media_type !== 'tv') {
+            continue;
+        }
+
         var url_path = 'movie'
 
         if (item.media_type == 'tv') {
@@ -43,6 +47,8 @@ const search = async (query) => {
         var poster_url = `/assets/img/backpath-no-img.png`
         if (item.poster_path !== null) {
             var poster_url = `https://image.tmdb.org/t/p/w600_and_h900_bestv2${item.poster_path}`
+        } else {
+            var poster_url = `/assets/img/backpath-no-img.png`
         }
 
         var display_title = item.original_title || item.title

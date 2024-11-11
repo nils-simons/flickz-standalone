@@ -1,8 +1,8 @@
-const torrent = require('../../app/torrent/torrent');
+const search = require('../../app/torrent/search');
 
 exports.get = (app) => {
-    app.get('/api/torrent/search/:query/:search_type/:lang/:quality/:params', async (req, res) => {
-        const torrents = await torrent.search(req.params.query.replaceAll('+', ' '), req.params.search_type, req.params.lang, req.params.quality, req.params.params)
+    app.get('/api/torrent/search/:search_type/:query', async (req, res) => {
+        const torrents = await search.search(req.params.query.replaceAll('+', ' '), req.params.search_type)
         res.status(200).json({
             status: 200,
             data: torrents

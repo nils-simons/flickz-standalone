@@ -1,3 +1,4 @@
+const searchParams = new URLSearchParams(window.location.search);
 
 
 let MOVIE = null;
@@ -14,8 +15,12 @@ const loadMovie = async (id) => {
     }
 
     document.getElementById('card-title').innerText = data.data.original_title || data.data.title;
+    document.getElementById('header-title').innerText = data.data.original_title || data.data.title;
     document.getElementById('card-desc').innerText = data.data.overview;
 
 }
 
-loadMovie(947891)
+if (searchParams.has('id')) {
+    const id = searchParams.get('id');
+    loadMovie(id);
+}
