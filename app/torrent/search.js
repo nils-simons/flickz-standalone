@@ -18,8 +18,6 @@ const basicSearch = (query) => {
         TorrentSearchApi.enableProvider('ThePirateBay');
         const torrents = await TorrentSearchApi.search(query);
 
-        console.log(query);
-
         results = [];
         for (let i = 0; i < torrents.length; i++) {
             const tor = torrents[i];

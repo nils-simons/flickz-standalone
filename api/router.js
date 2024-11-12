@@ -3,4 +3,5 @@ exports.router = (app) => {
     require('./trending/trending').get(app);
     require('./movie/movie').get(app);
     require('./torrent/search').get(app);
+    require('./torrent/download').post(app);
 }
