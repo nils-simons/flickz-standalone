@@ -75,6 +75,10 @@ label select, input {
     cursor: pointer;
 }
 
+#opt-query {
+    width: 200%;
+}
+
 button {
     font-weight: 600;
     font-size: 1rem;

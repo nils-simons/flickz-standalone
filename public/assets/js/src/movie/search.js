@@ -1,14 +1,8 @@
 
-
+let TORRENTS = [];
 
 const search = async () => {
-
-    title_query = `${MOVIE.original_title || MOVIE.title}`;
-
-    const lang = document.getElementById('select-language').value
-    const quality = document.getElementById('select-quality').value
-
-    const query = `${MOVIE.original_title || MOVIE.title} ${lang} ${quality}`.replaceAll(' ', '+').toLowerCase().replace(/\++$/, '');
+    const query = encodeURIComponent(document.getElementById('opt-query').value.replace(/\++$/, ''));
     console.log(query);
 
     const resp = await fetch(`/api/torrent/search/basic/${query}/`);
@@ -16,6 +10,7 @@ const search = async () => {
 
     console.log(data);
 
+    TORRENTS = data.data;
 
     document.getElementById('results-table').innerHTML = `
     <tr>
@@ -35,11 +30,26 @@ const search = async () => {
             <td>${res.peers}</td>
             <td>${res.seeds}</td>
             <td>${res.size}</td>
-            <td><button>Download</button></td>
+            <td><button onclick="download(this, ${i})">Download</button></td>
         </tr>
         `
-
-        
     }
 
+}
+
+
+
+document.getElementById('select-language').addEventListener('change', (e) => {
+    changeQuery()
+})
+
+document.getElementById('select-quality').addEventListener('change', (e) => {
+    changeQuery()
+})
+
+
+function changeQuery() {
+    lang = document.getElementById('select-language').value
+    quality = document.getElementById('select-quality').value
+    document.getElementById('opt-query').value = `${(MOVIE.original_title || MOVIE.title).toLowerCase()} ${lang.toUpperCase()} ${quality.toLowerCase()}`.replace(/\++$/, '')
 }

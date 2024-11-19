@@ -9,7 +9,7 @@ const loadMovie = async (id) => {
     const data = await resp.json();
 
     MOVIE = data.data;
-
+    MOVIE.type = 'movie';
     if (data.data.poster_path) {
         document.getElementById('card-poster').src = `https://image.tmdb.org/t/p/w600_and_h900_bestv2${data.data.poster_path}`;
     }
@@ -18,6 +18,7 @@ const loadMovie = async (id) => {
     document.getElementById('header-title').innerText = data.data.original_title || data.data.title;
     document.getElementById('card-desc').innerText = data.data.overview;
 
+    document.getElementById('opt-query').value = (data.data.original_title || data.data.title).toLowerCase();
 }
 
 if (searchParams.has('id')) {

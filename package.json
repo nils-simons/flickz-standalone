@@ -15,6 +15,7 @@
     "node-fetch": "^3.3.2",
     "node-json-db": "^2.3.0",
     "torrent-search-api": "^2.1.4",
-    "transmission": "^0.4.10"
+    "uuid": "^11.0.3",
+    "webtorrent": "^2.5.6"
   }
 }

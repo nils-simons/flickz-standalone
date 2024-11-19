@@ -23,4 +23,4 @@ ENV TRANS_URL=
 
 EXPOSE 4700
 
-CMD ["node", "index.js"]
+CMD ["node", "--no-deprecation", "index.js"]

@@ -6,7 +6,7 @@ require('dotenv').config()
 
 
 const jondb = require('node-json-db')
-const db = new jondb.JsonDB(new jondb.Config("./db/flickz-standalone", true, false, '/'))
+const db = new jondb.JsonDB(new jondb.Config("./db/flickz-standalone", true, true, '/'))
 
 exports.db = db;
 

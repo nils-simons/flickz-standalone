@@ -2,7 +2,6 @@ let url = new URL(window.location.href);
 
 document.getElementById('navbar-search').addEventListener('keyup', (e) => {
     if (e.key !== 'Enter' || e.code !== 'Enter') { return }
-    console.log(e);
     const query = e.target.value;
 
     if (query.replaceAll(' ', '').length == 0) {
@@ -20,10 +19,10 @@ document.getElementById('navbar-search').addEventListener('keyup', (e) => {
 
 const search = async (query) => {
 
-    var url_query = query.replaceAll(' ', '+');
+    var url_query = encodeURIComponent(query);
 
     let url = new URL(window.location.href);
-    url.searchParams.set("q", url_query);
+    url.searchParams.set("q", query);
     window.history.pushState({}, "", url);
 
     const resp = await fetch(`/api/search/${url_query}`);
@@ -84,6 +83,7 @@ if (q !== null) {
 
         loadTrendings();
     } else {
+        document.getElementById('navbar-search').value = q
         search(q);
 
     }
