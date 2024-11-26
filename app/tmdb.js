@@ -2,6 +2,7 @@
 
 exports.searchQuery = (query) => {
     return new Promise(async (r) => {
+        // var resp = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query.replaceAll('+', '%20')}&include_adult=false&language=en-US`, {
         var resp = await fetch(`https://api.themoviedb.org/3/search/multi?query=${query.replaceAll('+', '%20')}&include_adult=false&language=en-US`, {
             method: 'GET',
             headers: {
@@ -38,7 +39,21 @@ exports.getTrendings = () => {
 
         results = respPage1.results.concat(respPage2.results)
 
-        r(results)
+
+        f_res = [];
+
+        for (let i = 0; i < results.length; i++) {
+            const elm = results[i];
+            
+            if (elm.media_type == 'movie') {
+                f_res.push(elm);
+            }
+
+            continue
+
+        }
+
+        r(f_res)
     })
 }
 
