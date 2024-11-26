@@ -11,7 +11,7 @@ exports.get = (app) => {
             return
         }
 
-        const results = await tmdb.searchQuery(req.params.query.replaceAll(' ', '+'))
+        const results = await tmdb.searchQuery(decodeURIComponent(req.params.query))
         res.status(200).json({
             status: 200,
             data: results

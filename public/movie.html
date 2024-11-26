@@ -17,6 +17,7 @@
 
     <script defer src="./assets/js/src/movie/movie.js"></script>
     <script defer src="./assets/js/src/movie/search.js"></script>
+    <script defer src="./assets/js/src/movie/download.js"></script>
 </head>
 <body>
     <header>
@@ -24,7 +25,7 @@
             <i class='bx bx-left-arrow-alt'></i>
         </div>
         <div class="title">
-            <span>Some Super Film</span>
+            <span id="header-title">Loading...</span>
         </div>
     </header>
     <main>
@@ -32,11 +33,11 @@
 
         <div class="card">
             <!-- Movie Poster Image -->
-            <img id="card-poster" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fDId2ZqBNSZBROQ1bxI0x6BXYvT.jpg" alt="John Wick: Chapter 4">
+            <img id="card-poster" src="./assets/img/backpath-no-img.png" alt="John Wick: Chapter 4">
             <!-- Text Content -->
             <div class="content">
-                <span id="card-title">John Wick: Chapter 4</span>
-                <p id="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ratione quae? Ducimus nesciunt reiciendis quis. Modi, molestias est optio ut exercitationem, pariatur dicta hic aperiam corrupti illo minus, magni porro!</p>
+                <span id="card-title">Loading...</span>
+                <p id="card-desc"></p>
             </div>
         </div>
 
@@ -46,6 +47,7 @@
                     Languages
                     <br>
                     <select id="select-language">
+                        <option value="">Default</option>
                         <option value="eng">Englisch</option>
                         <option value="ger">German</option>
                         <option value="fra">French</option>
@@ -57,39 +59,32 @@
                     <br>
                     <select id="select-quality">
                         <option value="">None</option>
-                        <option value="">HD</option>
-                        <option value="">FHD</option>
-                        <option value="">2K</option>
-                        <option value="">4K</option>
+                        <option value="720">HD</option>
+                        <option value="1080">FHD</option>
+                        <option value="2K">2K</option>
+                        <option value="4K">4K</option>
                     </select>
                 </label>
 
-                <label for="opt-params" class="opt-params-label">
-                    Additional Parameters
+                <label for="opt-query" class="opt-query-label">
+                    Query
                     <br>
-                    <input id="opt-params" type="text">
+                    <input id="opt-query" type="text">
                 </label>
             </div>
 
             <button onclick="search()">Search</button>
         </div>
 
-        <div>
+        <div class="results-container">
             <table>
-                <tbody>
+                <tbody id="results-table">
                     <tr>
                         <th>Name</th>
                         <th>Seeds</th>
                         <th>Peers</th>
                         <th>Size</th>
                         <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>Harry.Potter.Hogwarts.Tournament.Of.Houses.S01.COMPLETE.720p.HMA</td>
-                        <td>223</td>
-                        <td>126</td>
-                        <td>2.2 GB</td>
-                        <td><button>Download</button></td>
                     </tr>
                 </tbody>
             </table>
